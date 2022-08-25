@@ -1,0 +1,49 @@
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #2b2e79aa);
+}
+
+.root--navbar--common {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: aqua;
+  box-shadow: 0 0 10px aquamarine;
+  max-height: 65px;
+}
+
+.root--navbar--main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.root--navbar--common > ul{
+  display: flex;
+  list-style: none;
+}
+.root--navbar--common > ul > li{
+  margin-right: 20px;
+}
+
+.app-name{
+  font-size: 30px;
+  font-family: 'Kanit';
+  font-style: italic;
+  color: black;
+  margin-left: 20px;
+}
+
+p{
+  color: black;
+}
+
+

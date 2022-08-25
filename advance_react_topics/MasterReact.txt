@@ -1,0 +1,12 @@
+React is not a complete framework, instead its a UI Library
+With the help of other libraries we deliver complete web application solution.
+
+Topics to master React:
+CORE REACT
+    a. Hooks - useState, useEffect, useRef : Proper understanding of Hooks and how they work should be there.
+REACT ECO SYSTEM 
+    a. Network Request Libraries : Apollo GraphQL, React Query
+    b. UI - Chakra UI, Material-UI
+    c. Server Side Rendring/Performance  - Next.js, Astro, 
+ADVANCE REACT 
+    Suspense, React Server Components
