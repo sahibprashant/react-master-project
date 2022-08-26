@@ -1,9 +1,11 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import './Tab3.css'
 
 export default function Tab3() {
+
     return (
-        <div>
+        <div className="tab3--parent">
             <Helmet>
                 <title>Tab3</title>
                 <meta name = "description" content='page related cotent'/>

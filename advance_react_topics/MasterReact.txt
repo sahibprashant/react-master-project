@@ -1,3 +1,25 @@
+REACT BASICS
+What is React? 
+React.js is a JavaScript Library use to develop Web and Mobile Applications.
+
+What is ReactDOM?
+DOM (Document Object Model) is basically an interface that represents how browser will read your HTML and XML, DOM creates a tree based structure of HTML/XML code.
+ReactDOM is library which helps React to interact with DOM.
+
+How React Works?
+React converts its components and elements to native dom elements and server process them furthur same as normal websites.
+
+React is Composable and Declaritive.
+Composable means it works in components and by Declaritive means we declare things in React and library takes care of work after that. For example we define a element object using JSX.
+
+React works in Components. Components are functions which returns React elements.
+
+JSX - JavaScript XML : creates JS Objects or React elements. Child elements should be wrapped in a single object/element.
+
+Components & Props in React - Functional and Class Components are there they return React Elements to render, Props are parameters which we can pass in components.
+State - state of componetns its parameter values and other thing. Page got re-render when state updates. React can update state async for performace
+......................................
+
 React is not a complete framework, instead its a UI Library
 With the help of other libraries we deliver complete web application solution.
 
@@ -10,3 +32,5 @@ REACT ECO SYSTEM
     c. Server Side Rendring/Performance  - Next.js, Astro, 
 ADVANCE REACT 
     Suspense, React Server Components
+
+

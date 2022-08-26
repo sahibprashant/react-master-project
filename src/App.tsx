@@ -4,8 +4,6 @@ import {
   Routes,
   Route,
   Link,
-  useParams,
-  useMatch
 } from "react-router-dom";
 
 import reactLogo from './assets/react.svg'
@@ -15,10 +13,9 @@ import Tab2 from "./components/Tab2/Tab2";
 import Tab3 from "./components/Tab3/Tab3";
 
 function App() {
-
   return (
     <Router>
-      <div>
+      <div className='root--root'>
         <nav className='root--navbar--common'>
           <div className='root--navbar--main'>
             <img className='logo' src="/src/assets/react.svg" />
@@ -43,7 +40,9 @@ function App() {
           <Route path="/tab3" element={<Tab3 />} />
         </Routes>
 
-        <footer>This is common footer.</footer>
+        <div className='root--footer--common'>
+          <footer>This is common footer.</footer>
+        </div>
       </div>
     </Router>
   );
