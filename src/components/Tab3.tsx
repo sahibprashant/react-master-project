@@ -7,9 +7,8 @@ import BlogsCard from './BlogsCard';
 export default function Tab3() {
 
     const baseURL = "https://public-api.wordpress.com/rest/v1.1/sites/prashant416368327.wordpress.com/posts/";
-    const [data, setData] = useState({ isLoading: true, notFetched : false ,blogs: Array() })
-
-    var PostData = Array();
+    const [data, setData] = useState({ isLoading: true, notFetched: false, blogs: Array() })
+    let PostData = Array();
 
     useEffect(() => {
         if (data.isLoading) {
@@ -29,8 +28,8 @@ export default function Tab3() {
                                 "id": element.ID,
                                 "title": element.title,
                                 "image": title_img,
-                                "readingTime": "3 Min Read",
-                                "view": "232 View",
+                                "readingTime": `${Math.ceil(Math.random()*10)} Mins Read`,
+                                "view": `${Math.ceil(Math.random()*1000)} Views`,
                                 "comment": "02 Comments",
                                 "details": element.excerpt,
                                 "content": element.content
@@ -60,7 +59,7 @@ export default function Tab3() {
             </Helmet>
 
             <div className='blogs'>
-                { data.isLoading ? <p>Loading...</p>:
+                {data.isLoading ? <p>Loading...</p> :
                     data.blogs.map((post, i) => (
                         <Link key={i} to={`/blogDetails/${post.id}`} state={post}><BlogsCard key={i} data={post} /></Link>
                     ))
