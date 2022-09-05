@@ -8,9 +8,9 @@ import {
 
 import reactLogo from './assets/react.svg'
 import './App.css'
-import Tab1 from "./components/Tab1/Tab1";
-import Tab2 from "./components/Tab2/Tab2";
-import Tab3 from "./components/Tab3/Tab3";
+import Tab1 from "./components/Tab1";
+import Tab2 from "./components/Tab2";
+import Tab3 from "./components/Tab3";
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
         </Routes>
 
         <div className='root--footer--common'>
-          <footer>This is common footer.</footer>
+          <p>This is common footer.</p>
         </div>
       </div>
     </Router>

@@ -1,30 +1,30 @@
 import React from 'react'
-import './Tab1.css'
-// export default function Tab1(){
-//     return (<h1>This is Tab1.</h1>)
-// }
+import {Helmet} from 'react-helmet-async'
+import '../styles/Tab1.css';
 
 class Tab1 extends React.Component<any, any>{
     
-    timerID: any;
-
+    timerID : any;
+    
     //this will be called before component is mounted, thus do not use setState here
     constructor(props: any) {
         super(props);
-        this.state = {date : new Date()}
+        this.state = { date: null }
     }
 
     //will be called just after component mounts, can call setState here
-    componentDidMount() { 
+    componentDidMount() {
+        this.setState({ date: new Date().toLocaleTimeString() })
         this.timerID = setInterval(
             () => this.tick(),
             1000
-        )
+        );
     }
 
-    //invoked immediately after updating occurs. This method is not called for the initial render.
+    //invoked immediately after updating occurs. This method is not called before the initial render.
     //best place to do network request just after everything is setup
-    componentDidUpdate() { }
+    componentDidUpdate() {
+    }
 
     //invoked immediately before a component is unmounted and destroyed. 
     //Perform any necessary cleanup in this method, such as invalidating timers,
@@ -32,20 +32,27 @@ class Tab1 extends React.Component<any, any>{
     //do not call setState here
     componentWillUnmount() {
         clearInterval(this.timerID)
-     }
+    }
 
 
-    tick(){
+    tick() {
         this.setState({
-            date : new Date()
+            date: new Date().toLocaleTimeString()
         });
     }
 
+
+    //in order to display components in class component render function should return some element.
     render() {
         return (
             <div className="tab1--parent">
-                <h1>This is Tab1</h1>
-                <h3>It is {this.state.date.toString()}</h3>
+                <Helmet>
+                    <title>Digital Clock</title>
+                    <meta name="description" content='page related cotent' />
+                    <link rel='canonical' href='/tab3' />
+                </Helmet>
+                <h2>Digital Colck</h2>
+                <p>{this.state.date}</p>
             </div>
         );
     }
