@@ -1,6 +1,50 @@
-.tab3--parent{
+.tab3--parent {
+    display: block;
+    margin-top: 65px;
+}
+
+.blogs {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.blog-card {
+    width: 600px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    box-shadow: 1px 1px 15px lightgray;
+    cursor: pointer;
+}
+
+.blog-img {
+    width: 600px;
+    height: 310px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+}
+
+.blog-title {
+    margin-top: 40px;
+    padding-left: 20px;
+    color: black;
+    font-family: 'Kanit';
+}
+
+.desc-short {
+    font-size: 12px;
+    font-family: 'Kanit';
+    padding-left: 20px;
+    padding-right: 20px;
 }
