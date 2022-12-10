@@ -1,11 +1,12 @@
 import React from 'react'
-import {Helmet} from 'react-helmet-async'
+import { Helmet } from 'react-helmet-async'
 import '../styles/Tab1.css';
+import Default from './common/Default';
 
 class Tab1 extends React.Component<any, any>{
-    
-    timerID : any;
-    
+
+    timerID: any;
+
     //this will be called before component is mounted, thus do not use setState here
     constructor(props: any) {
         super(props);
@@ -45,15 +46,17 @@ class Tab1 extends React.Component<any, any>{
     //in order to display components in class component render function should return some element.
     render() {
         return (
-            <div className="tab1--parent">
-                <Helmet>
-                    <title>Digital Clock</title>
-                    <meta name="description" content='page related cotent' />
-                    <link rel='canonical' href='/tab3' />
-                </Helmet>
-                <h2>Digital Colck</h2>
-                <p>{this.state.date}</p>
-            </div>
+            <Default>
+                <div className="tab1--parent">
+                    <Helmet>
+                        <title>Digital Clock</title>
+                        <meta name="description" content='page related cotent' />
+                        <link rel='canonical' href='/tab3' />
+                    </Helmet>
+                    <h2>Digital Colck</h2>
+                    <p>{this.state.date}</p>
+                </div>
+            </Default>
         );
     }
 }

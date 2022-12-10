@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import '../styles/Tab3.css';
 import BlogsCard from './BlogsCard';
+import Default from './common/Default';
 
 export default function Tab3() {
 
@@ -28,8 +29,8 @@ export default function Tab3() {
                                 "id": element.ID,
                                 "title": element.title,
                                 "image": title_img,
-                                "readingTime": `${Math.ceil(Math.random()*10)} Mins Read`,
-                                "view": `${Math.ceil(Math.random()*1000)} Views`,
+                                "readingTime": `${Math.ceil(Math.random() * 10)} Mins Read`,
+                                "view": `${Math.ceil(Math.random() * 1000)} Views`,
                                 "comment": "02 Comments",
                                 "details": element.excerpt,
                                 "content": element.content
@@ -51,23 +52,25 @@ export default function Tab3() {
     }, [data.isLoading])
 
     return (
-        <div className="tab3--parent">
-            <Helmet>
-                <title>Blogs</title>
-                <meta name="description" content='page related cotent' />
-                <link rel='canonical' href='/tab3' />
-            </Helmet>
+        <Default>
+            <div className="tab3--parent">
+                <Helmet>
+                    <title>Blogs</title>
+                    <meta name="description" content='page related cotent' />
+                    <link rel='canonical' href='/tab3' />
+                </Helmet>
 
-            <div className='blogs'>
-                {data.isLoading ? <p>Loading...</p> :
-                    data.blogs.map((post, i) => (
-                        <Link key={i} to={`/blogDetails/${post.id}`} state={post}><BlogsCard key={i} data={post} /></Link>
-                    ))
-                }
-                {
-                    data.notFetched && <p>Error in fetching posts.</p>
-                }
+                <div className='blogs'>
+                    {data.isLoading ? <p>Loading...</p> :
+                        data.blogs.map((post, i) => (
+                            <Link key={i} to={`/blogDetails/${post.id}`} style={{ textDecoration: 'none' }} state={post}><BlogsCard key={i} data={post} /></Link>
+                        ))
+                    }
+                    {
+                        data.notFetched && <p>Error in fetching posts.</p>
+                    }
+                </div>
             </div>
-        </div>
+        </Default>
     )
 }

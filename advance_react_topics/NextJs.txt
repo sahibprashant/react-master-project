@@ -1,0 +1,52 @@
+## Rendering
+Types of Rendering available with Next.js: Client Side Rendering, Server Side Rendering, Static Site Generation
+
+
+#Pre-Rendering:
+Server-Side Rendering and Static Site Generation are also referred to as Pre-Rendering
+because the fetching of external data and transformation of React components into HTML happens before the result is sent to the client.
+
+
+#Client-Side Rendering vs. Pre-Rendering:
+    1. In a standard React application, the browser receives an empty HTML shell from the server along with the JavaScript instructions to construct the UI. 
+    This is called client-side rendering because the initial rendering work happens on the user's device.
+    2. Pre-rendering means the HTML is generated in advance, on a server, instead of having it all done by JavaScript on the user's device.
+
+
+#Server-Side Rendering?
+    Server-side rendering with JavaScript libraries like React is where the server returns a 
+    ready-to-render HTML pageand the JS scripts required to make the page interactive.
+    The HTML is rendered immediately with all the static elements. In the meantime,
+    the browser downloads and executes the JS code, after which the page becomes interactive.
+    The interactions on this page are now handled by the browser on the client side. 
+    For any new content or new data, the browser sends a request to the server through APIs,
+    and only the newly required information is fetched.
+
+    Advantages:
+        1. Fast initial loading
+        2. Great user experience even if the user has a bad connection.
+        3. Web page is indexed quicker, resulting in better SEO ranking.
+        4. A great option for static pages.
+
+    Disadvantages:
+        1. SSR needs more resources and can be expensive since all the processing is done on the server.
+        2. For complex applications, the high number of server requests can slow down the site.
+        3. Increased load with many users can lead to bottlenecks.
+
+
+## Building a SSR Application
+    An option to develop a SSR app is using React with Express.js but it is complex to do. 
+    Next.js comes here which removes all the complexity.
+
+
+## Next.js
+    Next.js is a React framework that gives you building blocks to create web applications. Used to develop SSR Apps.
+    You can use React to build your UI, then incrementally adopt Next.js features to solve common application requirements 
+    such as routing, data fetching, integrations - all while improving the developer and end-user experience.
+    
+    Next.js pre-renders every page by default.
+    
+    The beauty of Next.js is that you can choose the most appropriate rendering method for your use case on a page-by-page basis,
+    whether that's Static Site Generation, Server-side Rendering, or Client-Side Rendering.
+
+

@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import Confetti from 'react-confetti'
 import '../styles/Tab2.css'
 import Square from './Square';
+import Default from './common/Default'
 
 
 export default function Tab2() {
@@ -66,24 +67,26 @@ export default function Tab2() {
     }
 
     return (
-        <div className="tab2--parent">
-            <Helmet>
-                <title>Tick-Tac-Toe</title>
-                <meta name="description" content='page related cotent' />
-                <link rel='canonical' href='/tab3' />
-            </Helmet>
-            {winner && <Confetti />}
-            {winner ? `Winner is ${winningPlayer}` : ""}
-            <h2 onClick={winner || isFinished ? playAgain : () => { }}>
-                {winner || isFinished ? <>Play Again</> : <>Tic-Tac-Toe</>}
-            </h2>
-            <div className="tab2--board">
-                {
-                    board.map((square, index) => (
-                        <Square key={index} value={square} onClick={() => onClick(index)} />
-                    ))
-                }
+        <Default>
+            <div className="tab2--parent">
+                <Helmet>
+                    <title>Tick-Tac-Toe</title>
+                    <meta name="description" content='page related cotent' />
+                    <link rel='canonical' href='/tab3' />
+                </Helmet>
+                {winner && <Confetti />}
+                {winner ? `Winner is ${winningPlayer}` : ""}
+                <h2 onClick={winner || isFinished ? playAgain : () => { }}>
+                    {winner || isFinished ? <>Play Again</> : <>Tic-Tac-Toe</>}
+                </h2>
+                <div className="tab2--board">
+                    {
+                        board.map((square, index) => (
+                            <Square key={index} value={square} onClick={() => onClick(index)} />
+                        ))
+                    }
+                </div>
             </div>
-        </div>
+        </Default>
     )
 }
